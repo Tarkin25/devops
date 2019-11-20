@@ -1,0 +1,10 @@
+language: java
+
+addons:
+  sonarcloud:
+    organization: "tarkin25-1"
+    token:
+      secure: "343449c528f25f6b38ba2fed0969a5e75e5b5e4d" # encrypted value of your token
+
+script:
+  - ./gradlew sonarqube
