@@ -8,7 +8,7 @@ class RootControllerTest {
     @Test
     void helloWorld() {
 
-        Assertions.assertThat(1).isEqualTo(0);
+        Assertions.assertThat(1).isEqualTo(1);
 
     }
 }
