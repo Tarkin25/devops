@@ -4,6 +4,8 @@ jobs:
   include:
     - stage: CodeQuality
       script: ./gradlew sonarqube
+    - stage: HelloWorld
+      script: ./gradlew helloWorld
 
 addons:
   sonarcloud:

@@ -36,3 +36,7 @@ sonarqube {
 		property "sonar.projectKey", "Tarkin25_devops"
 	}
 }
+
+task helloWorld {
+	println('Hello World');
+}
