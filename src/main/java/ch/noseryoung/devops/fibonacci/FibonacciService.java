@@ -1,11 +1,12 @@
 package ch.noseryoung.devops.fibonacci;
 
+import java.math.BigInteger;
 import java.util.List;
 
 public interface FibonacciService {
 
-    List<Long> getFibonacciNumbersLimit(Long limit);
+    List<BigInteger> getFibonacciNumbersLimit(BigInteger limit);
 
-    List<Long> getFibonacciNumbersIterations(Integer iterations);
+    List<BigInteger> getFibonacciNumbersIterations(Integer iterations);
 
 }

@@ -2,6 +2,7 @@ package ch.noseryoung.devops.fibonacci;
 
 import org.springframework.stereotype.Service;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -10,18 +11,18 @@ import java.util.List;
 public class FibonacciServiceImpl implements FibonacciService {
 
     @Override
-    public List<Long> getFibonacciNumbersLimit(Long limit) {
-        List<Long> fibonacciNumbers = new LinkedList<>();
+    public List<BigInteger> getFibonacciNumbersLimit(BigInteger limit) {
+        List<BigInteger> fibonacciNumbers = new LinkedList<>();
 
-        Long lastFib=0L, fib=1L;
-        Long temp;
+        BigInteger lastFib = BigInteger.ZERO, fib = BigInteger.ONE;
+        BigInteger temp;
 
-        while(fib <= limit) {
+        while(fib.compareTo(limit) <= 0) {
             fibonacciNumbers.add(fib);
 
             temp = fib;
 
-            fib += lastFib;
+            fib = fib.add(lastFib);
 
             lastFib = temp;
         }
@@ -30,18 +31,18 @@ public class FibonacciServiceImpl implements FibonacciService {
     }
 
     @Override
-    public List<Long> getFibonacciNumbersIterations(Integer iterations) {
-        List<Long> fibonacciNumbers = new ArrayList<>(iterations);
+    public List<BigInteger> getFibonacciNumbersIterations(Integer iterations) {
+        List<BigInteger> fibonacciNumbers = new ArrayList<>(iterations);
 
-        Long lastFib=0L, fib = 1L;
-        Long temp;
+        BigInteger lastFib = BigInteger.ZERO, fib = BigInteger.ONE;
+        BigInteger temp;
 
         for(int i=0;i<iterations;i++) {
             fibonacciNumbers.add(fib);
 
             temp = fib;
 
-            fib += lastFib;
+            fib = fib.add(lastFib);
 
             lastFib = temp;
         }
